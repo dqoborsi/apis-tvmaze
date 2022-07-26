@@ -19,14 +19,11 @@ async function searchShows(term) {
   let resultArr = [];
   for (let entry of response.data) {
     let { id, name, summary, image } = entry.show;
-    console.log(image);
-    console.log(image.original)
-    console.log(typeof image.original)
-    let showObj = {id, name, summary, 'image': image.original};
+    let showObj = {id, name, summary, image};
     resultArr.push(showObj);
   }
   console.log('resultArr:', resultArr)
-  return response.data;
+  return resultArr;
 
   // return [
   //   {
